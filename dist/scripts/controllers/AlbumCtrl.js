@@ -1,13 +1,11 @@
 (function() {
-    function AlbumCtrl(Fixtures) {
+    function AlbumCtrl(Fixtures, SongPlayer) {
       this.albumData = Fixtures.getAlbum();
 
-
-
-      this.foo = "Tara"
+      this.songPlayer = SongPlayer;
     }
 
     angular
       .module('blocJams')
-      .controller('AlbumCtrl', ['Fixtures', AlbumCtrl]);
+      .controller('AlbumCtrl', ['Fixtures', 'SongPlayer', AlbumCtrl]);
 })();

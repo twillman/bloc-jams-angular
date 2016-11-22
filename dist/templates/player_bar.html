@@ -1,4 +1,4 @@
-<section class="player-bar">
+<section class="player-bar" ng-controller="PlayerBarCtrl as playerBar">
     <div class="container">
         <div class="control-group main-controls">
             <a class="previous">
@@ -12,9 +12,9 @@
             </a>
         </div>
         <div class="control-group currently-playing">
-            <h2 class="song-name"></h2>
+            <h2 class="song-name">{{playerBar.songPlayer.currentSong}}</h2>
             <h2 class="artist-song-mobile"></h2>
-            <h3 class="artist-name"></h3>
+            <h3 class="artist-name">{{playerBar.albumData.title}}</h3>
             <div class="seek-control">
                 <div class="seek-bar">
                     <div class="fill"></div>
