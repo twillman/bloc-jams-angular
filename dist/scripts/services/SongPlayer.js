@@ -9,8 +9,10 @@
         * @type {Object}
         */
 
-        
+
         var currentBuzzObject = null;
+
+
         /**
         * @function setSong
         * @desc Stops currently playing song and loads new audio file as currentBuzzObject
@@ -30,6 +32,11 @@
           currentSong = song;
         };
 
+        var playSong = function(song){
+          currentBuzzObject.play();
+          song.playing=true;
+        };
+
 
         SongPlayer.play = function(song) {
           if (SongPlayer.currentSong !== song) {
@@ -38,8 +45,7 @@
              currentBuzzObject.play();
            } else if (SongPlayer.currentSong === song) {
             if (currentBuzzObject.isPaused()) {
-               currentBuzzObject.play();
-               song.playing = true;
+               setSong(song);
             }
           }
         };
